@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع أدوات يومية</title>
+  <style>
+    body {
+      font-family: Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      direction: rtl;
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: #333;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px;
+      background: #2c3e50;
+      color: white;
+    }
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+    }
+    nav {
+      background: #34495e;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 400px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    input, select, button {
+      padding: 10px;
+      margin: 8px 0;
+      width: 90%;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+    }
+    button {
+      background: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2980b9;
+    }
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>✨ موقع الأدوات اليومية ✨</h1>
+    <p>حاسبة + مبدل وحدات + أدوات صغيرة مفيدة</p>
+  </header>
+
+  <nav>
+    <a href="#calc">الآلة الحاسبة</a>
+    <a href="#convert">مبدل الوحدات</a>
+  </nav>
+
+  <!-- آلة حاسبة -->
+  <section id="calc">
+    <div class="card">
+      <h2>🧮 الآلة الحاسبة</h2>
+      <input type="text" id="calcInput" placeholder="اكتب العملية مثلاً: 5+3*2">
+      <button onclick="calculate()">احسب</button>
+      <p id="calcResult">النتيجة ستظهر هنا</p>
+    </div>
+  </section>
+
+  <!-- مبدل وحدات -->
+  <section id="convert">
+    <div class="card">
+      <h2>📏 مبدل الطول</h2>
+      <input type="number" id="lengthInput" placeholder="اكتب الطول">
+      <select id="unit">
+        <option value="m">متر → سم</option>
+        <option value="cm">سم → متر</option>
+      </select>
+      <button onclick="convert()">حوّل</button>
+      <p id="convertResult">النتيجة ستظهر هنا</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 - موقع الأدوات اليومية | تصميم وتجربة تعليمية</p>
+  </footer>
+
+  <script>
+    // آلة حاسبة
+    function calculate() {
+      try {
+        const input = document.getElementById("calcInput").value;
+        const result = eval(input);
+        document.getElementById("calcResult").innerText = "النتيجة: " + result;
+      } catch (error) {
+        document.getElementById("calcResult").innerText = "⚠️ خطأ في العملية";
+      }
+    }
+
+    // مبدل وحدات
+    function convert() {
+      const value = parseFloat(document.getElementById("lengthInput").value);
+      const unit = document.getElementById("unit").value;
+      let result = "";
+
+      if (isNaN(value)) {
+        result = "⚠️ أدخل رقماً صحيحاً";
+      } else {
+        if (unit === "m") {
+          result = (value * 100) + " سم";
+        } else {
+          result = (value / 100) + " متر";
+        }
+      }
+
+      document.getElementById("convertResult").innerText = "النتيجة: " + result;
+    }
+  </script>
+</body>
+</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://example.com/</loc>
+    <lastmod>2025-08-02</lastmod>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+<title>موقع الأدوات اليومية</title>
+<meta name="description" content="موقع يوفر آلة حاسبة ومبدل وحدات وأدوات مفيدة يومياً">
